@@ -30,17 +30,22 @@ local default_setup = function(server)
 end
 
 require('mason').setup({})
+-- Get list from here: https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
 require('mason-lspconfig').setup({
   ensure_installed = {
-    tsserver = {},
-    pyright = {},
-    html = { filetypes = { 'html', 'twig', 'hbs' } },
-    lua_ls = {
-      Lua = {
-        workspace = { checkThirdParty = false },
-        telemetry = { enable = false },
-      },
-    },
+    "tsserver",
+    "pyright",
+    "rust_analyzer",
+    "gopls",
+    "lua_ls",
+    "html",
+    "nil_ls",
+    "ruff_lsp",
+    "bashls",
+    "tailwindcss",
+    "emmet_language_server",
+    "templ",
+    "sqlls",
   },
   handlers = { default_setup },
 })
