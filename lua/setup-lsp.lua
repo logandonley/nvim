@@ -23,6 +23,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end
 })
 
+vim.filetype.add({ extension = { templ = "templ" } })
+
 local default_setup = function(server)
   lspconfig[server].setup({
     capabilities = lsp_capabilities,
@@ -45,7 +47,24 @@ require('mason-lspconfig').setup({
     "emmet_language_server",
     "templ",
     "sqlls",
+    "elixirls"
   },
   handlers = { default_setup },
 })
 
+lspconfig.html.setup({
+  filetypes = { "html", "htmldjango", "templ" },
+})
+
+lspconfig.htmx.setup({
+  filetypes = { "html", "htmldjango", "templ" },
+})
+
+lspconfig.tailwindcss.setup({
+  filetypes = { "html", "htmldjango", "templ", "javascript", "typescript" },
+  init_options = {
+    userLanguages = {
+      templ = "html",
+    },
+  },
+})
