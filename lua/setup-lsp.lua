@@ -25,32 +25,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 vim.filetype.add({ extension = { templ = "templ" } })
 
-local default_setup = function(server)
-  lspconfig[server].setup({
-    capabilities = lsp_capabilities,
-  })
-end
 
-require('mason').setup({})
--- Get list from here: https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    "tsserver",
-    "pyright",
-    "gopls",
-    "lua_ls",
-    "html",
-    "nil_ls",
-    "ruff_lsp",
-    "bashls",
-    "tailwindcss",
-    "emmet_language_server",
-    "templ",
-    "sqlls",
-    "elixirls"
-  },
-  handlers = { default_setup },
+lspconfig.lua_ls.setup({})
+lspconfig.gopls.setup({})
+lspconfig.elixirls.setup({
+  cmd = { "elixir-ls" },
 })
+lspconfig.emmet_ls.setup({})
+lspconfig.nil_ls.setup({})
+lspconfig.dockerls.setup({})
+lspconfig.tsserver.setup({})
 
 lspconfig.html.setup({
   filetypes = { "html", "htmldjango", "templ" },

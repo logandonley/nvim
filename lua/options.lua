@@ -1,5 +1,5 @@
 vim.wo.number = true
-vim.wo.relativenumber = false
+vim.wo.relativenumber = true
 
 vim.o.clipboard = 'unnamedplus'
 
