@@ -6,6 +6,14 @@ return {
     local builtin = require 'telescope.builtin'
     local themes = require 'telescope.themes'
 
+    require('telescope').setup {
+      extensions = {
+        ['ui-select'] = {
+          themes.get_cursor {},
+        },
+      },
+    }
+
     local function apply_theme(cmd)
       return function()
         cmd(themes.get_ivy())
