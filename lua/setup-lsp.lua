@@ -30,6 +30,7 @@ lspconfig.lua_ls.setup({})
 lspconfig.gopls.setup({})
 lspconfig.elixirls.setup({
   cmd = { "elixir-ls" },
+  capabilities = lsp_capabilities
 })
 lspconfig.emmet_ls.setup({})
 lspconfig.nil_ls.setup({})
