@@ -11,6 +11,9 @@ return {
         ['ui-select'] = {
           themes.get_cursor {},
         },
+        file_browser = {
+          respect_gitignore = false,
+        },
       },
     }
 
