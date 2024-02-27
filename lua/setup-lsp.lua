@@ -1,4 +1,4 @@
-local lspconfig = require('lspconfig')
+local lspconfig = require 'lspconfig'
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -20,36 +20,36 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
     vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
     vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
-  end
+  end,
 })
 
-vim.filetype.add({ extension = { templ = "templ" } })
+vim.filetype.add { extension = { templ = 'templ' } }
 
+lspconfig.lua_ls.setup {}
+lspconfig.gopls.setup {}
+lspconfig.elixirls.setup {
+  cmd = { 'elixir-ls' },
+  capabilities = lsp_capabilities,
+}
+lspconfig.emmet_ls.setup {}
+lspconfig.nil_ls.setup {}
+lspconfig.dockerls.setup {}
+lspconfig.tsserver.setup {}
+lspconfig.astro.setup {}
 
-lspconfig.lua_ls.setup({})
-lspconfig.gopls.setup({})
-lspconfig.elixirls.setup({
-  cmd = { "elixir-ls" },
-  capabilities = lsp_capabilities
-})
-lspconfig.emmet_ls.setup({})
-lspconfig.nil_ls.setup({})
-lspconfig.dockerls.setup({})
-lspconfig.tsserver.setup({})
+lspconfig.html.setup {
+  filetypes = { 'html', 'htmldjango', 'templ' },
+}
 
-lspconfig.html.setup({
-  filetypes = { "html", "htmldjango", "templ" },
-})
+lspconfig.htmx.setup {
+  filetypes = { 'html', 'htmldjango', 'templ' },
+}
 
-lspconfig.htmx.setup({
-  filetypes = { "html", "htmldjango", "templ" },
-})
-
-lspconfig.tailwindcss.setup({
-  filetypes = { "html", "htmldjango", "templ", "javascript", "typescript" },
+lspconfig.tailwindcss.setup {
+  filetypes = { 'html', 'htmldjango', 'templ', 'javascript', 'typescript', 'astro' },
   init_options = {
     userLanguages = {
-      templ = "html",
+      templ = 'html',
     },
   },
-})
+}

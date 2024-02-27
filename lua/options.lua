@@ -14,9 +14,11 @@ vim.o.termguicolors = true
 
 vim.o.completeopt = 'menuone,noselect'
 
+vim.o.autoindent = true
+vim.o.smartindent = true
+
 vim.o.softtabstop = 2
 vim.o.tabstop = 2
-vim.o.smartindent = true
 vim.o.shiftwidth = 2
 vim.o.confirm = true
 vim.o.cursorline = true
@@ -28,3 +30,5 @@ vim.o.linebreak = true
 
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
+
+vim.o.swapfile = false
