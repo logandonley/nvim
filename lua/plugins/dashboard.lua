@@ -18,21 +18,15 @@ return {
             action = 'Telescope find_files',
             key = 'f',
           },
-          {
-            desc = ' dotfiles',
-            group = 'Number',
-            action = 'Telescope dotfiles',
-            key = 'd',
-          },
-          {
-            desc = ' obsidian',
-            group = 'Number',
-            action = 'Telescope find_files cwd=~/brain2',
-            key = 'o',
-          },
+          -- {
+          --   desc = ' dotfiles',
+          --   group = 'Number',
+          --   action = 'Telescope dotfiles',
+          --   key = 'd',
+          -- },
         },
-      }
+      },
     }
   end,
-  dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+  dependencies = { { 'nvim-tree/nvim-web-devicons' } },
 }

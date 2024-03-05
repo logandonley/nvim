@@ -36,6 +36,8 @@ lspconfig.nil_ls.setup {}
 lspconfig.dockerls.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.astro.setup {}
+lspconfig.ruff_lsp.setup {}
+lspconfig.pyright.setup {}
 
 lspconfig.html.setup {
   filetypes = { 'html', 'htmldjango', 'templ' },
