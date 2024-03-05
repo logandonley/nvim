@@ -38,6 +38,7 @@ lspconfig.tsserver.setup {}
 lspconfig.astro.setup {}
 lspconfig.ruff_lsp.setup {}
 lspconfig.pyright.setup {}
+lspconfig.cssls.setup {}
 
 lspconfig.html.setup {
   filetypes = { 'html', 'htmldjango', 'templ' },
