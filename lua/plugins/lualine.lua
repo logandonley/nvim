@@ -1,6 +1,8 @@
 return {
-  "nvim-lualine/lualine.nvim",
+  'nvim-lualine/lualine.nvim',
   opts = {
-    theme = 'auto'
-  }
+    options = {
+      theme = 'gruvbox_dark',
+    },
+  },
 }

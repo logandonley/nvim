@@ -39,6 +39,9 @@ lspconfig.astro.setup {}
 lspconfig.ruff_lsp.setup {}
 lspconfig.pyright.setup {}
 lspconfig.cssls.setup {}
+lspconfig.svelte.setup {}
+lspconfig.hls.setup {}
+lspconfig.elmls.setup {}
 
 lspconfig.html.setup {
   filetypes = { 'html', 'htmldjango', 'templ' },
