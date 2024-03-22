@@ -42,6 +42,7 @@ lspconfig.cssls.setup {}
 lspconfig.svelte.setup {}
 lspconfig.hls.setup {}
 lspconfig.elmls.setup {}
+lspconfig.yamlls.setup {}
 
 lspconfig.html.setup {
   filetypes = { 'html', 'htmldjango', 'templ' },

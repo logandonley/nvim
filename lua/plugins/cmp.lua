@@ -8,10 +8,11 @@ return {
     'hrsh7th/cmp-path',
   },
   config = function()
-    local cmp = require('cmp')
-    local luasnip = require('luasnip')
+    local cmp = require 'cmp'
+    local luasnip = require 'luasnip'
+    require('luasnip.loaders.from_vscode').lazy_load()
 
-    cmp.setup({
+    cmp.setup {
       sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
@@ -20,11 +21,12 @@ return {
       completion = {
         completeopt = 'menu,menuone,noinsert',
       },
-      mapping = cmp.mapping.preset.insert({
+      mapping = cmp.mapping.preset.insert {
         -- Enter key confirms completion item
-        ['<CR>'] = cmp.mapping.confirm({
-          behavior = cmp.ConfirmBehavior.Replace, select = true,
-        }),
+        ['<CR>'] = cmp.mapping.confirm {
+          behavior = cmp.ConfirmBehavior.Replace,
+          select = true,
+        },
 
         -- Ctrl + space triggers completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
@@ -46,12 +48,12 @@ return {
             fallback()
           end
         end, { 'i', 's' }),
-      }),
+      },
       snippet = {
         expand = function(args)
           require('luasnip').lsp_expand(args.body)
         end,
       },
-    })
-  end
+    }
+  end,
 }
