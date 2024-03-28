@@ -29,9 +29,11 @@ lspconfig.lua_ls.setup {}
 lspconfig.gopls.setup {}
 lspconfig.elixirls.setup {
   cmd = { 'elixir-ls' },
-  capabilities = lsp_capabilities,
+  -- capabilities = lsp_capabilities,
 }
-lspconfig.emmet_ls.setup {}
+lspconfig.emmet_ls.setup {
+  filetypes = { 'astro', 'css', 'eruby', 'html', 'htmldjango', 'javascriptreact', 'less', 'pug', 'sass', 'scss', 'svelte', 'typescriptreact', 'vue', 'heex' },
+}
 lspconfig.nil_ls.setup {}
 lspconfig.dockerls.setup {}
 lspconfig.tsserver.setup {}
@@ -43,9 +45,10 @@ lspconfig.svelte.setup {}
 lspconfig.hls.setup {}
 lspconfig.elmls.setup {}
 lspconfig.yamlls.setup {}
+lspconfig.fennel_ls.setup {}
 
 lspconfig.html.setup {
-  filetypes = { 'html', 'htmldjango', 'templ' },
+  filetypes = { 'html', 'htmldjango', 'templ', 'heex' },
 }
 
 lspconfig.htmx.setup {
@@ -53,10 +56,11 @@ lspconfig.htmx.setup {
 }
 
 lspconfig.tailwindcss.setup {
-  filetypes = { 'html', 'htmldjango', 'templ', 'javascript', 'typescript', 'astro' },
+  filetypes = { 'html', 'htmldjango', 'templ', 'javascript', 'typescript', 'astro', 'heex' },
   init_options = {
     userLanguages = {
       templ = 'html',
+      heex = 'html-eex',
     },
   },
 }
