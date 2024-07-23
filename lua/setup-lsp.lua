@@ -46,6 +46,7 @@ lspconfig.hls.setup {}
 lspconfig.elmls.setup {}
 lspconfig.yamlls.setup {}
 lspconfig.fennel_ls.setup {}
+lspconfig.crystalline.setup {}
 
 lspconfig.html.setup {
   filetypes = { 'html', 'htmldjango', 'templ', 'heex' },
